@@ -75,3 +75,7 @@ C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug
 C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\TP_LABORATORIO_GYM.genruntimeconfig.cache
 C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\ref\TP_LABORATORIO_GYM.dll
 C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\bin\Debug\net6.0-windows\appsettings.json
+C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\TP_LABORATORIO_GYM.Login.resources
+C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\TP_LABORATORIO_GYM.MenuPrincipal.resources
+C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\TP_LABORATORIO_GYM.Properties.Resources.resources
+C:\Users\Daiana\Documents\GitHub\TP_LABORATORIO_GYM\TP_LABORATORIO_GYM\obj\Debug\net6.0-windows\TP_LABORATORIO_GYM.Pagos.resources

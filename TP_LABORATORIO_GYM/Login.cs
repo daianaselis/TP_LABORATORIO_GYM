@@ -15,6 +15,7 @@ namespace TP_LABORATORIO_GYM
     {
         IServicioEmpleado servicioEmpleado;
         MenuPrincipal menuPrincipal;
+        
         public Login(IServicioEmpleado _servicioEmpleado, MenuPrincipal _menuPrincipal)
         {
             InitializeComponent();
@@ -28,10 +29,23 @@ namespace TP_LABORATORIO_GYM
                 txt_Legajo.Text,
                 txt_Password.Text
             );
-            if(empleado != null )
+            if (empleado != null)
             {
-
+                menuPrincipal.CargarDatos( empleado );
+                menuPrincipal.Show();
+                this.Hide();
+                menuPrincipal.FormClosed += ShowForm;
+            }
+            else
+            {
+                MessageBox.Show("Login incorrecto, intente denuevo");
             }
         }
+
+        private void ShowForm(object? sender, EventArgs e)
+        {
+            this.Show();
+        }
+
     }
 }

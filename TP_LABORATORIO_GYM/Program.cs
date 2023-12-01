@@ -41,6 +41,7 @@ namespace TP_LABORATORIO_GYM
                     //Agregar Todos los Formularios
                     services.AddScoped<ABMClientes>();
                     services.AddScoped<MenuPrincipal>();
+                    services.AddScoped<Pagos>();
                     services.AddScoped<Login>();
                 });
         }

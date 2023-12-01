@@ -39,7 +39,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(322, 77);
+            label1.Location = new Point(168, 63);
             label1.Name = "label1";
             label1.Size = new Size(190, 30);
             label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             txt_Legajo.BackColor = Color.White;
             txt_Legajo.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Legajo.Location = new Point(257, 170);
+            txt_Legajo.Location = new Point(86, 139);
             txt_Legajo.Name = "txt_Legajo";
             txt_Legajo.PlaceholderText = "Legajo";
             txt_Legajo.Size = new Size(341, 32);
@@ -59,7 +59,7 @@
             // 
             txt_Password.BackColor = Color.White;
             txt_Password.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Password.Location = new Point(257, 239);
+            txt_Password.Location = new Point(86, 236);
             txt_Password.Name = "txt_Password";
             txt_Password.PasswordChar = '*';
             txt_Password.PlaceholderText = "Password";
@@ -69,7 +69,7 @@
             // btn_iniciarSesion
             // 
             btn_iniciarSesion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_iniciarSesion.Location = new Point(352, 337);
+            btn_iniciarSesion.Location = new Point(180, 318);
             btn_iniciarSesion.Name = "btn_iniciarSesion";
             btn_iniciarSesion.Size = new Size(143, 34);
             btn_iniciarSesion.TabIndex = 3;
@@ -82,7 +82,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(857, 458);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(458, 506);
             Controls.Add(btn_iniciarSesion);
             Controls.Add(txt_Password);
             Controls.Add(txt_Legajo);
