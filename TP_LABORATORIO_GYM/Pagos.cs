@@ -1,32 +1,36 @@
-﻿using Modelo.Clases;
+﻿using MaterialSkin.Controls;
+using Modelo.Clases;
 using Modelo.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TP_LABORATORIO_GYM
 {
-    public partial class Pagos : Form
+    public partial class Pagos : MaterialForm
     {
         Empleado empleadoActual;
         IServicioCliente servicioCliente;
         IServicioCuotas servicioCuotas;
         BindingList<Cuota> bindingPagos;
+        MenuPrincipal principal;
         public Pagos(IServicioCliente servicioCliente, IServicioCuotas servicioCuotas)
         {
             InitializeComponent();
             this.servicioCliente = servicioCliente;
             this.servicioCuotas = servicioCuotas;
+            bindingPagos = new BindingList<Cuota>(servicioCuotas.TraerCuotas());
+            this.FormClosing += Pagos_FormClosing;
+            StateManager.MaterialSkinManager.AddFormToManage(this);
+        }
+
+        public void CargarDatos(Empleado empleado, MenuPrincipal menuPrincipal)
+        {
+            empleadoActual = empleado;
+            principal = menuPrincipal;
+            combo_clientes.DataSource = null;
             combo_clientes.DataSource = servicioCliente.TraerClientes();
             combo_clientes.DisplayMember = "DNI";
-            bindingPagos = new BindingList<Cuota>(servicioCuotas.TraerCuotas());
+            dgv_pagos.DataSource = null;
             dgv_pagos.DataSource = bindingPagos;
             dgv_pagos.Columns[3].ValueType = typeof(string);
             dgv_pagos.Columns[3].DataPropertyName = "Cliente.DNI";
@@ -34,11 +38,6 @@ namespace TP_LABORATORIO_GYM
             dgv_pagos.Columns[4].ValueType = typeof(string);
             dgv_pagos.Columns[4].DataPropertyName = "Empleado.Legajo";
             dgv_pagos.Columns[4].HeaderText = "Empleado";
-        }
-
-        public void CargarDatos(Empleado empleado)
-        {
-            empleadoActual = empleado;
         }
 
         private void btn_Pagos_Click(object sender, EventArgs e)
@@ -99,12 +98,30 @@ namespace TP_LABORATORIO_GYM
                 Type propertyType;
                 PropertyInfo propertyInfo;
 
-                propertyType = property.GetType();
-                propertyInfo = propertyType.GetProperty(propertyName);
-                retValue = propertyInfo.GetValue(property, null).ToString();
+                if (property != null)
+                {
+                    propertyType = property.GetType();
+                    propertyInfo = propertyType.GetProperty(propertyName);
+                    retValue = propertyInfo.GetValue(property, null).ToString();
+                }
             }
 
             return retValue;
         }
+
+
+
+        private void Pagos_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+                principal.Show();
+            }
+        }
+
+       
+        
     }
 }

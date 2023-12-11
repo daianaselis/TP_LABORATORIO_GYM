@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btn_Pagos = new Button();
             label1 = new Label();
             txt_monto = new TextBox();
             dgv_pagos = new DataGridView();
             combo_clientes = new ComboBox();
             label2 = new Label();
+            btn_Pagos = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dgv_pagos).BeginInit();
             SuspendLayout();
-            // 
-            // btn_Pagos
-            // 
-            btn_Pagos.Location = new Point(91, 272);
-            btn_Pagos.Name = "btn_Pagos";
-            btn_Pagos.Size = new Size(167, 40);
-            btn_Pagos.TabIndex = 0;
-            btn_Pagos.Text = "Realizar pago";
-            btn_Pagos.UseVisualStyleBackColor = true;
-            btn_Pagos.Click += btn_Pagos_Click;
             // 
             // label1
             // 
@@ -67,12 +57,13 @@
             // 
             dgv_pagos.AllowUserToAddRows = false;
             dgv_pagos.AllowUserToDeleteRows = false;
+            dgv_pagos.BackgroundColor = Color.SeaShell;
             dgv_pagos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_pagos.Location = new Point(407, 40);
+            dgv_pagos.Location = new Point(351, 67);
             dgv_pagos.Name = "dgv_pagos";
             dgv_pagos.ReadOnly = true;
             dgv_pagos.RowTemplate.Height = 25;
-            dgv_pagos.Size = new Size(532, 449);
+            dgv_pagos.Size = new Size(562, 431);
             dgv_pagos.TabIndex = 3;
             dgv_pagos.CellFormatting += dgv_pagos_formatting;
             // 
@@ -93,17 +84,37 @@
             label2.TabIndex = 5;
             label2.Text = "Cliente";
             // 
+            // btn_Pagos
+            // 
+            btn_Pagos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_Pagos.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_Pagos.Depth = 0;
+            btn_Pagos.HighEmphasis = true;
+            btn_Pagos.Icon = null;
+            btn_Pagos.Location = new Point(125, 373);
+            btn_Pagos.Margin = new Padding(4, 6, 4, 6);
+            btn_Pagos.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_Pagos.Name = "btn_Pagos";
+            btn_Pagos.NoAccentTextColor = Color.Empty;
+            btn_Pagos.Size = new Size(69, 36);
+            btn_Pagos.TabIndex = 6;
+            btn_Pagos.Text = "Pagar";
+            btn_Pagos.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_Pagos.UseAccentColor = false;
+            btn_Pagos.UseVisualStyleBackColor = true;
+            btn_Pagos.Click += btn_Pagos_Click;
+            // 
             // Pagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(963, 510);
+            Controls.Add(btn_Pagos);
             Controls.Add(label2);
             Controls.Add(combo_clientes);
             Controls.Add(dgv_pagos);
             Controls.Add(txt_monto);
             Controls.Add(label1);
-            Controls.Add(btn_Pagos);
             Name = "Pagos";
             Text = "Pagos";
             ((System.ComponentModel.ISupportInitialize)dgv_pagos).EndInit();
@@ -112,12 +123,11 @@
         }
 
         #endregion
-
-        private Button btn_Pagos;
         private Label label1;
         private TextBox txt_monto;
         private DataGridView dgv_pagos;
         private ComboBox combo_clientes;
         private Label label2;
+        private MaterialSkin.Controls.MaterialButton btn_Pagos;
     }
 }

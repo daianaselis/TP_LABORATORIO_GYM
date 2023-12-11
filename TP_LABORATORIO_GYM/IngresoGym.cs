@@ -2,13 +2,12 @@
 using Modelo.Interfaces;
 using System.Runtime.InteropServices;
 
-
 namespace TP_LABORATORIO_GYM
 {
-    public partial class Login : MaterialForm
+    public partial class IngresoGym : MaterialForm
     {
-        IServicioEmpleado servicioEmpleado;
-        MenuPrincipal menuPrincipal;
+        IServicioCliente servicioCliente;
+        MenuPrincipal principal;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -21,48 +20,49 @@ namespace TP_LABORATORIO_GYM
             int nHeightEllipse // height of ellipse
         );
 
-        public Login(IServicioEmpleado _servicioEmpleado, MenuPrincipal _menuPrincipal)
+        public IngresoGym(IServicioCliente _servicioCliente)
         {
             InitializeComponent();
-            servicioEmpleado = _servicioEmpleado;
-            menuPrincipal = _menuPrincipal;
+            servicioCliente = _servicioCliente;
+            this.FormClosing += IngresoGym_FormClosing;
             StateManager.MaterialSkinManager.AddFormToManage(this);
             this.FormBorderStyle = FormBorderStyle.None;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void btn_iniciarSesion_Click(object sender, EventArgs e)
+        public void CargarDatos(MenuPrincipal menuPrincipal)
         {
-            var empleado = servicioEmpleado.IniciarSesion(
-                txt_Legajo.Text,
-                txt_Password.Text
-            );
-            if (empleado != null)
+            principal = menuPrincipal;
+        }
+
+        private void btnIngresoGym_Click(object sender, EventArgs e)
+        {
+            try
             {
-                menuPrincipal.CargarDatos(empleado);
-                menuPrincipal.Show();
-                this.Hide();
-                menuPrincipal.FormClosed += ShowForm;
+                servicioCliente.VerificarAccesoGym(txt_dni.Text);
+                MessageBox.Show("ACCESO CONCEDIDO");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Login incorrecto, intente denuevo");
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void ShowForm(object? sender, EventArgs e)
+        private void txt_dni_TextChanged(object sender, EventArgs e)
         {
-            this.Show();
+
         }
 
-        private void Pagos_FormClosing(object? sender, FormClosingEventArgs e)
+        private void IngresoGym_FormClosing(object? sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                Application.Exit();
+                e.Cancel = true;
+                Hide();
+                principal.Show();
             }
         }
 
-
+       
     }
 }

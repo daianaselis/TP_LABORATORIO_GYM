@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Clases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos
 {
@@ -13,6 +8,15 @@ namespace Datos
         public Contexto(DbContextOptions<Contexto> options) : base(options)
         {
             
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Cliente>()
+                .HasMany(e => e.Cuotas)
+                .WithOne(e => e.Cliente)
+                .OnDelete(DeleteBehavior.ClientCascade);
         }
 
         public DbSet<Cliente> Clientes { get; set; }

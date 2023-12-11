@@ -1,16 +1,18 @@
+using MaterialSkin.Controls;
 using Modelo.Clases;
 using Modelo.Interfaces;
 using System.ComponentModel;
-using System.Net;
-using System.Windows.Forms;
+
 
 namespace TP_LABORATORIO_GYM
 {
-    public partial class ABMClientes : Form
+    public partial class ABMClientes : MaterialForm
     {
         private IServicioCliente servicioCliente;
         BindingList<Cliente> bindingClientes;
         Cliente clienteActual;
+        MenuPrincipal principal;
+
         public ABMClientes(IServicioCliente _servicioCliente)
         {
             InitializeComponent();
@@ -22,11 +24,18 @@ namespace TP_LABORATORIO_GYM
             dgv_clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_clientes.AllowUserToAddRows = false;
             dgv_clientes.AllowUserToDeleteRows = false;
+            FormClosing += ABM_FormClosing;
+            StateManager.MaterialSkinManager.AddFormToManage(this);
+        }
+
+        public void CargarDatos(MenuPrincipal menuPrincipal)
+        {
+            principal = menuPrincipal;
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            if(btn_aceptar.Text == "Modificar")
+            if (btn_aceptar.Text == "Modificar")
             {
                 clienteActual.Nombre = txt_NombCliente.Text;
                 clienteActual.Apellido = txt_ApellidoCliente.Text;
@@ -56,9 +65,9 @@ namespace TP_LABORATORIO_GYM
         private void dgv_clientes_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(dgv_clientes.SelectedRows.Count == 1)
+                if (dgv_clientes.SelectedRows.Count == 1)
                 {
                     var cliente = (Cliente)dgv_clientes.SelectedRows[0].DataBoundItem;
                     btn_aceptar.Text = "Modificar";
@@ -69,7 +78,7 @@ namespace TP_LABORATORIO_GYM
                     DTP_cliente.Value = cliente.FechaDeNacimiento;
                     combo_genero.SelectedIndex = (int)cliente.Genero;
                 }
-                
+
             }
             if (e.KeyCode == Keys.Delete)
             {
@@ -79,6 +88,16 @@ namespace TP_LABORATORIO_GYM
                     servicioCliente.BorrarCliente(cliente.IDCliente);
                     bindingClientes.Remove(cliente);
                 }
+            }
+        }
+
+        private void ABM_FormClosing(object? sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+                principal.Show();
             }
         }
     }

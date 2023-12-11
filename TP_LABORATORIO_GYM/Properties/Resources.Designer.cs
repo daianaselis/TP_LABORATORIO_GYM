@@ -59,5 +59,25 @@ namespace TP_LABORATORIO_GYM.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clientes_potenciales_de_un_gimnasio_que_buscan_y_quienes_son_1280x720 {
+            get {
+                object obj = ResourceManager.GetObject("Clientes-potenciales-de-un-gimnasio-que-buscan-y-quienes-son-1280x720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e55479155d6efb18930afda8b7f3c3f0 {
+            get {
+                object obj = ResourceManager.GetObject("e55479155d6efb18930afda8b7f3c3f0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -29,76 +29,120 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            label1 = new Label();
-            txt_Legajo = new TextBox();
-            txt_Password = new TextBox();
-            btn_iniciarSesion = new Button();
+            btn_iniciarSesion = new MaterialSkin.Controls.MaterialButton();
+            txt_Legajo = new MaterialSkin.Controls.MaterialTextBox();
+            txt_Password = new MaterialSkin.Controls.MaterialTextBox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(168, 63);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 30);
-            label1.TabIndex = 0;
-            label1.Text = "INICIO DE SESION";
-            // 
-            // txt_Legajo
-            // 
-            txt_Legajo.BackColor = Color.White;
-            txt_Legajo.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Legajo.Location = new Point(86, 139);
-            txt_Legajo.Name = "txt_Legajo";
-            txt_Legajo.PlaceholderText = "Legajo";
-            txt_Legajo.Size = new Size(341, 32);
-            txt_Legajo.TabIndex = 1;
-            // 
-            // txt_Password
-            // 
-            txt_Password.BackColor = Color.White;
-            txt_Password.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Password.Location = new Point(86, 236);
-            txt_Password.Name = "txt_Password";
-            txt_Password.PasswordChar = '*';
-            txt_Password.PlaceholderText = "Password";
-            txt_Password.Size = new Size(341, 32);
-            txt_Password.TabIndex = 2;
             // 
             // btn_iniciarSesion
             // 
-            btn_iniciarSesion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_iniciarSesion.Location = new Point(180, 318);
+            btn_iniciarSesion.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_iniciarSesion.BackColor = Color.White;
+            btn_iniciarSesion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_iniciarSesion.Depth = 0;
+            btn_iniciarSesion.HighEmphasis = true;
+            btn_iniciarSesion.Icon = null;
+            btn_iniciarSesion.Location = new Point(270, 422);
+            btn_iniciarSesion.Margin = new Padding(4, 6, 4, 6);
+            btn_iniciarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             btn_iniciarSesion.Name = "btn_iniciarSesion";
-            btn_iniciarSesion.Size = new Size(143, 34);
-            btn_iniciarSesion.TabIndex = 3;
-            btn_iniciarSesion.Text = "INICIAR SESION";
-            btn_iniciarSesion.UseVisualStyleBackColor = true;
+            btn_iniciarSesion.NoAccentTextColor = Color.Empty;
+            btn_iniciarSesion.Size = new Size(91, 36);
+            btn_iniciarSesion.TabIndex = 4;
+            btn_iniciarSesion.Text = "INGRESAR";
+            btn_iniciarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_iniciarSesion.UseAccentColor = false;
+            btn_iniciarSesion.UseVisualStyleBackColor = false;
             btn_iniciarSesion.Click += btn_iniciarSesion_Click;
+            // 
+            // txt_Legajo
+            // 
+            txt_Legajo.AnimateReadOnly = false;
+            txt_Legajo.BackColor = SystemColors.InactiveBorder;
+            txt_Legajo.BorderStyle = BorderStyle.None;
+            txt_Legajo.Depth = 0;
+            txt_Legajo.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_Legajo.LeadingIcon = null;
+            txt_Legajo.Location = new Point(151, 183);
+            txt_Legajo.MaxLength = 50;
+            txt_Legajo.MouseState = MaterialSkin.MouseState.OUT;
+            txt_Legajo.Multiline = false;
+            txt_Legajo.Name = "txt_Legajo";
+            txt_Legajo.Size = new Size(326, 50);
+            txt_Legajo.TabIndex = 5;
+            txt_Legajo.Text = "";
+            txt_Legajo.TrailingIcon = null;
+            // 
+            // txt_Password
+            // 
+            txt_Password.AnimateReadOnly = false;
+            txt_Password.BorderStyle = BorderStyle.None;
+            txt_Password.Depth = 0;
+            txt_Password.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_Password.LeadingIcon = null;
+            txt_Password.Location = new Point(151, 294);
+            txt_Password.MaxLength = 50;
+            txt_Password.MouseState = MaterialSkin.MouseState.OUT;
+            txt_Password.Multiline = false;
+            txt_Password.Name = "txt_Password";
+            txt_Password.Password = true;
+            txt_Password.Size = new Size(326, 50);
+            txt_Password.TabIndex = 6;
+            txt_Password.Text = "";
+            txt_Password.TrailingIcon = null;
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(151, 161);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(49, 19);
+            materialLabel1.TabIndex = 7;
+            materialLabel1.Text = "Legajo";
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(151, 272);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(82, 19);
+            materialLabel2.TabIndex = 8;
+            materialLabel2.Text = "Contraseña";
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(458, 506);
-            Controls.Add(btn_iniciarSesion);
+            ClientSize = new Size(615, 709);
+            Controls.Add(materialLabel2);
+            Controls.Add(materialLabel1);
             Controls.Add(txt_Password);
             Controls.Add(txt_Legajo);
-            Controls.Add(label1);
+            Controls.Add(btn_iniciarSesion);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "Login";
-            Text = "Login";
+            Text = "Iniciar Sesion";
             ResumeLayout(false);
             PerformLayout();
         }
 
-        #endregion
+        private MaterialSkin.Controls.MaterialButton btn_iniciarSesion;
+        private MaterialSkin.Controls.MaterialTextBox txt_Legajo;
+        private MaterialSkin.Controls.MaterialTextBox txt_Password;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
 
-        private Label label1;
-        private TextBox txt_Legajo;
-        private TextBox txt_Password;
-        private Button btn_iniciarSesion;
+        #endregion
     }
 }
