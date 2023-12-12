@@ -121,7 +121,16 @@
   <data name="e55479155d6efb18930afda8b7f3c3f0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\e55479155d6efb18930afda8b7f3c3f0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="b86c756a42458619fd5ef1e0a014af1d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b86c756a42458619fd5ef1e0a014af1d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Clientes-potenciales-de-un-gimnasio-que-buscan-y-quienes-son-1280x720" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clientes-potenciales-de-un-gimnasio-que-buscan-y-quienes-son-1280x720.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="610bda9b7f9163731fb9f702c7431926" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\610bda9b7f9163731fb9f702c7431926.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="614b7f59f1c03cfebaa0d7ce09dc5c0c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\614b7f59f1c03cfebaa0d7ce09dc5c0c.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

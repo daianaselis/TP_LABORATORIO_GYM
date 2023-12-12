@@ -34,6 +34,9 @@
             txt_Password = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_iniciarSesion
@@ -44,7 +47,7 @@
             btn_iniciarSesion.Depth = 0;
             btn_iniciarSesion.HighEmphasis = true;
             btn_iniciarSesion.Icon = null;
-            btn_iniciarSesion.Location = new Point(270, 422);
+            btn_iniciarSesion.Location = new Point(542, 521);
             btn_iniciarSesion.Margin = new Padding(4, 6, 4, 6);
             btn_iniciarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             btn_iniciarSesion.Name = "btn_iniciarSesion";
@@ -65,7 +68,7 @@
             txt_Legajo.Depth = 0;
             txt_Legajo.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_Legajo.LeadingIcon = null;
-            txt_Legajo.Location = new Point(151, 183);
+            txt_Legajo.Location = new Point(432, 266);
             txt_Legajo.MaxLength = 50;
             txt_Legajo.MouseState = MaterialSkin.MouseState.OUT;
             txt_Legajo.Multiline = false;
@@ -82,7 +85,7 @@
             txt_Password.Depth = 0;
             txt_Password.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_Password.LeadingIcon = null;
-            txt_Password.Location = new Point(151, 294);
+            txt_Password.Location = new Point(432, 353);
             txt_Password.MaxLength = 50;
             txt_Password.MouseState = MaterialSkin.MouseState.OUT;
             txt_Password.Multiline = false;
@@ -98,7 +101,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(151, 161);
+            materialLabel1.Location = new Point(432, 228);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(49, 19);
@@ -110,12 +113,29 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(151, 272);
+            materialLabel2.Location = new Point(432, 331);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(82, 19);
             materialLabel2.TabIndex = 8;
             materialLabel2.Text = "Contraseña";
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(panel2);
+            panel1.Location = new Point(6, 67);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(405, 656);
+            panel1.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(411, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(410, 139);
+            panel2.TabIndex = 10;
             // 
             // Login
             // 
@@ -124,7 +144,8 @@
             BackColor = Color.WhiteSmoke;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(615, 709);
+            ClientSize = new Size(779, 725);
+            Controls.Add(panel1);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
             Controls.Add(txt_Password);
@@ -132,7 +153,9 @@
             Controls.Add(btn_iniciarSesion);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "Login";
+            Sizable = false;
             Text = "Iniciar Sesion";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +167,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
 
         #endregion
+
+        private Panel panel1;
+        private Panel panel2;
     }
 }

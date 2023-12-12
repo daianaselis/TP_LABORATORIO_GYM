@@ -33,6 +33,8 @@
             btn_pagos = new MaterialSkin.Controls.MaterialButton();
             btn_verificar = new MaterialSkin.Controls.MaterialButton();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_clientes
@@ -42,7 +44,7 @@
             btn_clientes.Depth = 0;
             btn_clientes.HighEmphasis = true;
             btn_clientes.Icon = null;
-            btn_clientes.Location = new Point(232, 171);
+            btn_clientes.Location = new Point(411, 26);
             btn_clientes.Margin = new Padding(4, 6, 4, 6);
             btn_clientes.MouseState = MaterialSkin.MouseState.HOVER;
             btn_clientes.Name = "btn_clientes";
@@ -63,7 +65,7 @@
             btn_pagos.Depth = 0;
             btn_pagos.HighEmphasis = true;
             btn_pagos.Icon = null;
-            btn_pagos.Location = new Point(241, 255);
+            btn_pagos.Location = new Point(93, 273);
             btn_pagos.Margin = new Padding(4, 6, 4, 6);
             btn_pagos.MouseState = MaterialSkin.MouseState.HOVER;
             btn_pagos.Name = "btn_pagos";
@@ -83,7 +85,7 @@
             btn_verificar.Depth = 0;
             btn_verificar.HighEmphasis = true;
             btn_verificar.Icon = null;
-            btn_verificar.Location = new Point(192, 343);
+            btn_verificar.Location = new Point(350, 365);
             btn_verificar.Margin = new Padding(4, 6, 4, 6);
             btn_verificar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_verificar.Name = "btn_verificar";
@@ -103,6 +105,17 @@
             sqlCommand1.Notification = null;
             sqlCommand1.Transaction = null;
             // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources._614b7f59f1c03cfebaa0d7ce09dc5c0c;
+            panel1.Controls.Add(btn_clientes);
+            panel1.Controls.Add(btn_pagos);
+            panel1.Controls.Add(btn_verificar);
+            panel1.Location = new Point(6, 67);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(579, 441);
+            panel1.TabIndex = 6;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -110,13 +123,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(591, 514);
-            Controls.Add(btn_verificar);
-            Controls.Add(btn_pagos);
-            Controls.Add(btn_clientes);
+            Controls.Add(panel1);
             Name = "MenuPrincipal";
+            Sizable = false;
             Text = "MenuPrincipal";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -125,5 +138,6 @@
         private MaterialSkin.Controls.MaterialButton btn_pagos;
         private MaterialSkin.Controls.MaterialButton btn_verificar;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private Panel panel1;
     }
 }

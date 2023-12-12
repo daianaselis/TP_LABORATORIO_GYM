@@ -63,6 +63,36 @@ namespace TP_LABORATORIO_GYM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _610bda9b7f9163731fb9f702c7431926 {
+            get {
+                object obj = ResourceManager.GetObject("610bda9b7f9163731fb9f702c7431926", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _614b7f59f1c03cfebaa0d7ce09dc5c0c {
+            get {
+                object obj = ResourceManager.GetObject("614b7f59f1c03cfebaa0d7ce09dc5c0c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b86c756a42458619fd5ef1e0a014af1d {
+            get {
+                object obj = ResourceManager.GetObject("b86c756a42458619fd5ef1e0a014af1d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clientes_potenciales_de_un_gimnasio_que_buscan_y_quienes_son_1280x720 {
             get {
                 object obj = ResourceManager.GetObject("Clientes-potenciales-de-un-gimnasio-que-buscan-y-quienes-son-1280x720", resourceCulture);

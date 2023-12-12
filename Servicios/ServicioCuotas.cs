@@ -26,7 +26,10 @@ namespace Servicios
             {
                 throw new Exception("La cuota no puede tener monto negativo o 0");
             }
-
+            if(cuota.Monto > 100000)
+            {
+                throw new Exception("La cuota no puede exceder $100.000");
+            }
 
             contexto.Cuotas.Add(cuota);
             contexto.SaveChanges();

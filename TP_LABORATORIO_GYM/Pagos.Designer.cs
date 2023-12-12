@@ -29,29 +29,22 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            txt_monto = new TextBox();
             dgv_pagos = new DataGridView();
-            combo_clientes = new ComboBox();
             label2 = new Label();
             btn_Pagos = new MaterialSkin.Controls.MaterialButton();
+            combo_clientes = new MaterialSkin.Controls.MaterialComboBox();
+            pagos_txt = new MaterialSkin.Controls.MaterialTextBox();
             ((System.ComponentModel.ISupportInitialize)dgv_pagos).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(78, 232);
+            label1.Location = new Point(67, 246);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 1;
             label1.Text = "Monto";
-            // 
-            // txt_monto
-            // 
-            txt_monto.Location = new Point(147, 229);
-            txt_monto.Name = "txt_monto";
-            txt_monto.Size = new Size(100, 23);
-            txt_monto.TabIndex = 2;
             // 
             // dgv_pagos
             // 
@@ -67,18 +60,10 @@
             dgv_pagos.TabIndex = 3;
             dgv_pagos.CellFormatting += dgv_pagos_formatting;
             // 
-            // combo_clientes
-            // 
-            combo_clientes.FormattingEnabled = true;
-            combo_clientes.Location = new Point(147, 153);
-            combo_clientes.Name = "combo_clientes";
-            combo_clientes.Size = new Size(121, 23);
-            combo_clientes.TabIndex = 4;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(78, 156);
+            label2.Location = new Point(52, 156);
             label2.Name = "label2";
             label2.Size = new Size(44, 15);
             label2.TabIndex = 5;
@@ -104,18 +89,59 @@
             btn_Pagos.UseVisualStyleBackColor = true;
             btn_Pagos.Click += btn_Pagos_Click;
             // 
+            // combo_clientes
+            // 
+            combo_clientes.AutoResize = false;
+            combo_clientes.BackColor = Color.FromArgb(255, 255, 255);
+            combo_clientes.Depth = 0;
+            combo_clientes.DrawMode = DrawMode.OwnerDrawVariable;
+            combo_clientes.DropDownHeight = 174;
+            combo_clientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo_clientes.DropDownWidth = 121;
+            combo_clientes.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            combo_clientes.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            combo_clientes.FormattingEnabled = true;
+            combo_clientes.IntegralHeight = false;
+            combo_clientes.ItemHeight = 43;
+            combo_clientes.Location = new Point(115, 141);
+            combo_clientes.MaxDropDownItems = 4;
+            combo_clientes.MouseState = MaterialSkin.MouseState.OUT;
+            combo_clientes.Name = "combo_clientes";
+            combo_clientes.Size = new Size(196, 49);
+            combo_clientes.StartIndex = 0;
+            combo_clientes.TabIndex = 7;
+            // 
+            // pagos_txt
+            // 
+            pagos_txt.AnimateReadOnly = false;
+            pagos_txt.BorderStyle = BorderStyle.None;
+            pagos_txt.Depth = 0;
+            pagos_txt.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            pagos_txt.LeadingIcon = null;
+            pagos_txt.Location = new Point(127, 211);
+            pagos_txt.MaxLength = 50;
+            pagos_txt.MouseState = MaterialSkin.MouseState.OUT;
+            pagos_txt.Multiline = false;
+            pagos_txt.Name = "pagos_txt";
+            pagos_txt.Size = new Size(167, 50);
+            pagos_txt.TabIndex = 8;
+            pagos_txt.Text = "";
+            pagos_txt.TrailingIcon = null;
+            // 
             // Pagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(963, 510);
+            Controls.Add(pagos_txt);
+            Controls.Add(combo_clientes);
             Controls.Add(btn_Pagos);
             Controls.Add(label2);
-            Controls.Add(combo_clientes);
             Controls.Add(dgv_pagos);
-            Controls.Add(txt_monto);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.Sizable;
             Name = "Pagos";
+            Sizable = false;
             Text = "Pagos";
             ((System.ComponentModel.ISupportInitialize)dgv_pagos).EndInit();
             ResumeLayout(false);
@@ -124,10 +150,10 @@
 
         #endregion
         private Label label1;
-        private TextBox txt_monto;
         private DataGridView dgv_pagos;
-        private ComboBox combo_clientes;
         private Label label2;
         private MaterialSkin.Controls.MaterialButton btn_Pagos;
+        private MaterialSkin.Controls.MaterialComboBox combo_clientes;
+        private MaterialSkin.Controls.MaterialTextBox pagos_txt;
     }
 }

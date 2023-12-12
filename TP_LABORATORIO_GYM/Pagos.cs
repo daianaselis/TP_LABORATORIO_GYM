@@ -3,6 +3,7 @@ using Modelo.Clases;
 using Modelo.Interfaces;
 using System.ComponentModel;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace TP_LABORATORIO_GYM
 {
@@ -13,14 +14,52 @@ namespace TP_LABORATORIO_GYM
         IServicioCuotas servicioCuotas;
         BindingList<Cuota> bindingPagos;
         MenuPrincipal principal;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+       (
+           int nLeftRect,     // x-coordinate of upper-left corner
+           int nTopRect,      // y-coordinate of upper-left corner
+           int nRightRect,    // x-coordinate of lower-right corner
+           int nBottomRect,   // y-coordinate of lower-right corner
+           int nWidthEllipse, // width of ellipse
+           int nHeightEllipse // height of ellipse
+       );
         public Pagos(IServicioCliente servicioCliente, IServicioCuotas servicioCuotas)
         {
-            InitializeComponent();
+            InitializeComponent();            
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
             this.servicioCliente = servicioCliente;
             this.servicioCuotas = servicioCuotas;
             bindingPagos = new BindingList<Cuota>(servicioCuotas.TraerCuotas());
             this.FormClosing += Pagos_FormClosing;
+            dgv_pagos.AutoGenerateColumns = false;
             StateManager.MaterialSkinManager.AddFormToManage(this);
+
+            DataGridViewColumn col1 = new DataGridViewTextBoxColumn();
+            col1.DataPropertyName = "IDCuota";
+            col1.HeaderText = "ID Cuota";
+            dgv_pagos.Columns.Add(col1);
+
+            DataGridViewColumn col2 = new DataGridViewTextBoxColumn();
+            col2.DataPropertyName = "Monto";
+            col2.HeaderText = "Monto";
+            dgv_pagos.Columns.Add(col2);
+
+            DataGridViewColumn col3 = new DataGridViewTextBoxColumn();
+            col3.DataPropertyName = "FechaDePago";
+            col3.HeaderText = "Fecha De Pago";
+            dgv_pagos.Columns.Add(col3);
+
+            DataGridViewColumn col4 = new DataGridViewTextBoxColumn();
+            col4.DataPropertyName = "Cliente.DNI";
+            col4.HeaderText = "DNI Cliente";
+            dgv_pagos.Columns.Add(col4);
+
+            DataGridViewColumn col5 = new DataGridViewTextBoxColumn();
+            col5.DataPropertyName = "Empleado.Legajo";
+            col5.HeaderText = "Legajo Empleado";
+            dgv_pagos.Columns.Add(col5);
         }
 
         public void CargarDatos(Empleado empleado, MenuPrincipal menuPrincipal)
@@ -32,13 +71,8 @@ namespace TP_LABORATORIO_GYM
             combo_clientes.DisplayMember = "DNI";
             dgv_pagos.DataSource = null;
             dgv_pagos.DataSource = bindingPagos;
-            dgv_pagos.Columns[3].ValueType = typeof(string);
-            dgv_pagos.Columns[3].DataPropertyName = "Cliente.DNI";
-            dgv_pagos.Columns[3].HeaderText = "Cliente";
-            dgv_pagos.Columns[4].ValueType = typeof(string);
-            dgv_pagos.Columns[4].DataPropertyName = "Empleado.Legajo";
-            dgv_pagos.Columns[4].HeaderText = "Empleado";
         }
+
 
         private void btn_Pagos_Click(object sender, EventArgs e)
         {
@@ -49,7 +83,7 @@ namespace TP_LABORATORIO_GYM
                     Empleado = empleadoActual,
                     IDCuota = Guid.NewGuid(),
                     FechaDePago = DateTime.Now,
-                    Monto = double.Parse(txt_monto.Text),
+                    Monto = double.Parse(pagos_txt.Text),
                     Cliente = (Cliente)combo_clientes.SelectedItem
                 };
                 servicioCuotas.PagarCuota(cuota);
@@ -109,8 +143,6 @@ namespace TP_LABORATORIO_GYM
             return retValue;
         }
 
-
-
         private void Pagos_FormClosing(object? sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -121,7 +153,6 @@ namespace TP_LABORATORIO_GYM
             }
         }
 
-       
-        
+
     }
 }
