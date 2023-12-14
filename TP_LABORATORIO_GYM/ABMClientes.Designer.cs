@@ -212,7 +212,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Clientes_potenciales_de_un_gimnasio_que_buscan_y_quienes_son_1280x720;
-            ClientSize = new Size(1157, 609);
+            ClientSize = new Size(1173, 648);
             Controls.Add(dtp_fechaNacimiento);
             Controls.Add(combo_genero);
             Controls.Add(txt_dni);

@@ -88,9 +88,9 @@ namespace TP_LABORATORIO_GYM
             //Manejar el tema de Material, colores, y demas
             StateManager.MaterialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             StateManager.MaterialSkinManager.ColorScheme = new ColorScheme(
-                (Primary)0x98bcf2, 
-                (Primary)0x98bcf2, 
-                (Primary)0x98bcf2, 
+                (Primary)0x88acf2, 
+                (Primary)0x88acf2, 
+                (Primary)0x88acf2, 
                 (Accent)0xf298bc, 
                 TextShade.WHITE
             );

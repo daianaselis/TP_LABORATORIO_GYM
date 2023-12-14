@@ -1,6 +1,5 @@
 ﻿using MaterialSkin;
 
-
 namespace TP_LABORATORIO_GYM
 {
     public static class StateManager
